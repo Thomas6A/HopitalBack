@@ -8,7 +8,7 @@ import co.simplon.hopital.persistance.entity.Service;
 
 public class ServiceConvert {
 	
-	public static ServiceConvert instance;
+	private static ServiceConvert instance;
 	
 	public static ServiceConvert getInstance() {
 		if(instance == null) {
