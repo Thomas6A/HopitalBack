@@ -3,11 +3,13 @@ package co.simplon.hopital.business.service.room;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.simplon.hopital.business.DTO.RoomDTO;
 import co.simplon.hopital.business.convert.RoomConvert;
 import co.simplon.hopital.persistance.repository.IRoomRepository;
 
+@Service
 public class RoomServiceImpl implements IRoomService {
 	
 	private IRoomRepository repo;
