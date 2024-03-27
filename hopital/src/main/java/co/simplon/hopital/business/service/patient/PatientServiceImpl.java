@@ -50,6 +50,11 @@ public class PatientServiceImpl  implements IPatientService{
 	public void affectPatient(PatientDTO patient, BedDTO bed) {
 		bed.setBed_statut(true);
 		bedservice.updateBed(bed);
+		if (patient.getBed() != null) {
+			BedDTO patientBed = patient.getBed();
+			patientBed.setBed_statut(false);
+			bedservice.updateBed(patientBed);
+		}
 		patient.setBed(bed);
 		updatePatient(patient);
 	}
@@ -61,6 +66,11 @@ public class PatientServiceImpl  implements IPatientService{
 		bedservice.updateBed(bed);
 		patient.setBed(null);
 		updatePatient(patient);
+	}
+	
+	@Override
+	public List<PatientDTO> getPatientFromService(final String name) {
+		return PatientConvert.getInstance().convertListEntityToListDTO(repo.getPatientFromService(name));
 	}
 
 	@Autowired

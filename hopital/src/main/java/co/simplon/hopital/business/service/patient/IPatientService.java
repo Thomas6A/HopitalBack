@@ -20,5 +20,7 @@ public interface IPatientService {
 	public void affectPatient(final PatientDTO patient, final BedDTO bed);
 	
 	public void removePatient(final PatientDTO patient);
+	
+	public List<PatientDTO> getPatientFromService(final String name);
 
 }
