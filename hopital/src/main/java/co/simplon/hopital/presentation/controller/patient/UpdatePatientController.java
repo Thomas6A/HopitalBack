@@ -1,5 +1,6 @@
 package co.simplon.hopital.presentation.controller.patient;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class UpdatePatientController {
 		service.updatePatient(patient);
 	}
 
+	@Autowired
 	public void setService(IPatientService service) {
 		this.service = service;
 	}
