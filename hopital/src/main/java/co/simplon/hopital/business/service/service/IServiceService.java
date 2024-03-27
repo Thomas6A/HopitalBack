@@ -2,7 +2,7 @@ package co.simplon.hopital.business.service.service;
 
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.ServiceDTO;
+import co.simplon.hopital.business.dto.ServiceDTO;
 
 public interface IServiceService {
 	

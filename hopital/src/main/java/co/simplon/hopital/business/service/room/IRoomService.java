@@ -2,7 +2,7 @@ package co.simplon.hopital.business.service.room;
 
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.RoomDTO;
+import co.simplon.hopital.business.dto.RoomDTO;
 
 public interface IRoomService {
 	

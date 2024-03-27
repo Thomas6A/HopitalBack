@@ -3,7 +3,7 @@ package co.simplon.hopital.business.convert;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.PatientDTO;
+import co.simplon.hopital.business.dto.PatientDTO;
 import co.simplon.hopital.persistance.entity.Patient;
 
 public class PatientConvert {
@@ -19,12 +19,12 @@ public class PatientConvert {
 	
 	public PatientDTO convertEntityToDTO(final Patient entity) {
 		PatientDTO dto = new PatientDTO();
-		dto.setPatient_id(entity.getPatient_id());
-		dto.setPatient_firstname(entity.getPatient_firstname());
-		dto.setPatient_name(entity.getPatient_name());
-		dto.setPatient_gender(entity.getPatient_gender());
-		dto.setPatient_age(entity.getPatient_age());
-		dto.setPatient_number(entity.getPatient_number());
+		dto.setPatientId(entity.getPatientId());
+		dto.setPatientFirstname(entity.getPatientFirstname());
+		dto.setPatientName(entity.getPatientName());
+		dto.setPatientGender(entity.getPatientGender());
+		dto.setPatientAge(entity.getPatientAge());
+		dto.setPatientNumber(entity.getPatientNumber());
 		if (entity.getBed() != null) {
 			dto.setBed(BedConvert.getInstance().convertEntityToDTO(entity.getBed()));
 		}
@@ -32,7 +32,7 @@ public class PatientConvert {
 	}
 	
 	public List<PatientDTO> convertListEntityToListDTO(final List<Patient> entities){
-		List<PatientDTO> dtos = new ArrayList<PatientDTO>();
+		List<PatientDTO> dtos = new ArrayList<>();
 		for (Patient entity : entities) {
 			dtos.add(convertEntityToDTO(entity));
 		}
@@ -41,12 +41,12 @@ public class PatientConvert {
 	
 	public Patient convertDTOToEntity(final PatientDTO dto) {
 		Patient entity = new Patient();
-		entity.setPatient_id(dto.getPatient_id());
-		entity.setPatient_firstname(dto.getPatient_firstname());
-		entity.setPatient_name(dto.getPatient_name());
-		entity.setPatient_gender(dto.getPatient_gender());
-		entity.setPatient_age(dto.getPatient_age());
-		entity.setPatient_number(dto.getPatient_number());
+		entity.setPatientId(dto.getPatientId());
+		entity.setPatientFirstname(dto.getPatientFirstname());
+		entity.setPatientName(dto.getPatientName());
+		entity.setPatientGender(dto.getPatientGender());
+		entity.setPatientAge(dto.getPatientAge());
+		entity.setPatientNumber(dto.getPatientNumber());
 		if (dto.getBed() != null) {
 			entity.setBed(BedConvert.getInstance().convertDTOToEntity(dto.getBed()));
 		}
@@ -54,7 +54,7 @@ public class PatientConvert {
 	}
 	
 	public List<Patient> convertListDTOToListEntity(final List<PatientDTO> dtos){
-		List<Patient> entities = new ArrayList<Patient>();
+		List<Patient> entities = new ArrayList<>();
 		for (PatientDTO dto : dtos) {
 			entities.add(convertDTOToEntity(dto));
 		}

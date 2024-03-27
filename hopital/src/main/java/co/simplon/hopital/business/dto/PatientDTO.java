@@ -1,41 +1,20 @@
-package co.simplon.hopital.persistance.entity;
+package co.simplon.hopital.business.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "patient")
-public class Patient {
+public class PatientDTO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "patient_id")
 	private int patientId;
 	
-	@Column(nullable = false, length = 100, name = "patient_firstname")
 	private String patientFirstname;
 	
-	@Column(nullable = false, length = 100, name = "patient_name")
 	private String patientName;
 	
-	@Column(nullable = false, length = 10, name = "patient_gender")
 	private String patientGender;
 	
-	@Column(nullable = false, name = "patient_age")
 	private int patientAge;
 	
-	@Column(nullable = false, length = 15, unique = true, name = "patient_number")
 	private String patientNumber;
 	
-	@OneToOne
-	@JoinColumn(name = "id_bed", nullable = true)
-	private Bed bed;
+	private BedDTO bed;
 
 	public int getPatientId() {
 		return patientId;
@@ -85,14 +64,13 @@ public class Patient {
 		this.patientNumber = patientNumber;
 	}
 
-	public Bed getBed() {
+	public BedDTO getBed() {
 		return bed;
 	}
 
-	public void setBed(Bed bed) {
+	public void setBed(BedDTO bed) {
 		this.bed = bed;
 	}
-	
 	
 	
 

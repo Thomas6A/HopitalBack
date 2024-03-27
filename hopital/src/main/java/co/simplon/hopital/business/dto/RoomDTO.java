@@ -1,17 +1,17 @@
-package co.simplon.hopital.business.DTO;
+package co.simplon.hopital.business.dto;
 
 public class RoomDTO {
 	
-	private int room_id;
+	private int roomId;
 	
 	private ServiceDTO service;
 
-	public int getRoom_id() {
-		return room_id;
+	public int getRoomId() {
+		return roomId;
 	}
 
-	public void setRoom_id(int room_id) {
-		this.room_id = room_id;
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
 	}
 
 	public ServiceDTO getService() {

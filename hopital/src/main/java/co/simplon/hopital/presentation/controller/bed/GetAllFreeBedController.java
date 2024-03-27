@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.hopital.business.DTO.BedDTO;
+import co.simplon.hopital.business.dto.BedDTO;
 import co.simplon.hopital.business.service.bed.IBedService;
 
 @RestController
