@@ -11,7 +11,7 @@ import co.simplon.hopital.persistance.entity.Patient;
 @Repository
 public interface IPatientRepository extends JpaRepository<Patient, Integer> {
 	
-	@Query("select p from Patient p join p.bed b join b.room r join r.service s where s.service_name = :name")
+	@Query("select p from Patient p join p.bed b join b.room r join r.service s where s.serviceName = :name")
 	public List<Patient> getPatientFromService(final String name);
 
 }
