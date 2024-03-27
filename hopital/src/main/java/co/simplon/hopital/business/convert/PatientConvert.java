@@ -25,7 +25,9 @@ public class PatientConvert {
 		dto.setPatient_gender(entity.getPatient_gender());
 		dto.setPatient_age(entity.getPatient_age());
 		dto.setPatient_number(entity.getPatient_number());
-		dto.setBed(BedConvert.getInstance().convertEntityToDTO(entity.getBed()));
+		if (entity.getBed() != null) {
+			dto.setBed(BedConvert.getInstance().convertEntityToDTO(entity.getBed()));
+		}
 		return dto;
 	}
 	
@@ -45,7 +47,9 @@ public class PatientConvert {
 		entity.setPatient_gender(dto.getPatient_gender());
 		entity.setPatient_age(dto.getPatient_age());
 		entity.setPatient_number(dto.getPatient_number());
-		entity.setBed(BedConvert.getInstance().convertDTOToEntity(dto.getBed()));
+		if (dto.getBed() != null) {
+			entity.setBed(BedConvert.getInstance().convertDTOToEntity(dto.getBed()));
+		}
 		return entity;
 	}
 	
