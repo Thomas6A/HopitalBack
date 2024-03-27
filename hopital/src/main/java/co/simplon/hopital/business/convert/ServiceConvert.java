@@ -3,7 +3,7 @@ package co.simplon.hopital.business.convert;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.ServiceDTO;
+import co.simplon.hopital.business.dto.ServiceDTO;
 import co.simplon.hopital.persistance.entity.Service;
 
 public class ServiceConvert {
@@ -19,13 +19,13 @@ public class ServiceConvert {
 	
 	public ServiceDTO convertEntityToDTO(final Service entity) {
 		ServiceDTO dto = new ServiceDTO();
-		dto.setService_id(entity.getService_id());
-		dto.setService_name(entity.getService_name());
+		dto.setServiceId(entity.getServiceId());
+		dto.setServiceName(entity.getServiceName());
 		return dto;
 	}
 	
 	public List<ServiceDTO> convertListEntityToListDTO(final List<Service> entities){
-		List<ServiceDTO> dtos = new ArrayList<ServiceDTO>();
+		List<ServiceDTO> dtos = new ArrayList<>();
 		for (Service entity : entities) {
 			dtos.add(convertEntityToDTO(entity));
 		}
@@ -34,13 +34,13 @@ public class ServiceConvert {
 	
 	public Service convertDTOToEntity(final ServiceDTO dto) {
 		Service entity = new Service();
-		entity.setService_id(dto.getService_id());
-		entity.setService_name(dto.getService_name());
+		entity.setServiceId(dto.getServiceId());
+		entity.setServiceName(dto.getServiceName());
 		return entity;
 	}
 	
 	public List<Service> convertListDTOToListEntity(final List<ServiceDTO> dtos){
-		List<Service> entities = new ArrayList<Service>();
+		List<Service> entities = new ArrayList<>();
 		for (ServiceDTO dto : dtos) {
 			entities.add(convertDTOToEntity(dto));
 		}

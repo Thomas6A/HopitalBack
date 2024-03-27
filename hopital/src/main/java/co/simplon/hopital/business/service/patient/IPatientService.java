@@ -2,8 +2,8 @@ package co.simplon.hopital.business.service.patient;
 
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.BedDTO;
-import co.simplon.hopital.business.DTO.PatientDTO;
+import co.simplon.hopital.business.dto.BedDTO;
+import co.simplon.hopital.business.dto.PatientDTO;
 
 public interface IPatientService {
 	

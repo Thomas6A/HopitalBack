@@ -13,25 +13,26 @@ public class Service {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int service_id;
+	@Column(name = "service_id")
+	private int serviceId;
 	
-	@Column(nullable = false, length = 50)
-	private String service_name;
+	@Column(nullable = false, length = 50, name = "service_name")
+	private String serviceName;
 
-	public int getService_id() {
-		return service_id;
+	public int getServiceId() {
+		return serviceId;
 	}
 
-	public void setService_id(int service_id) {
-		this.service_id = service_id;
+	public void setServiceId(int serviceId) {
+		this.serviceId = serviceId;
 	}
 
-	public String getService_name() {
-		return service_name;
+	public String getServiceName() {
+		return serviceName;
 	}
 
-	public void setService_name(String service_name) {
-		this.service_name = service_name;
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
 	}
 	
 	

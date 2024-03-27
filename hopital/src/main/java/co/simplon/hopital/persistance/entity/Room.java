@@ -1,5 +1,6 @@
 package co.simplon.hopital.persistance.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,18 +12,19 @@ import jakarta.persistence.Table;
 public class Room {
 	
 	@Id
-	private int room_id;
+	@Column(name = "room_id")
+	private int roomId;
 	
 	@ManyToOne
 	@JoinColumn(name = "service_id", nullable = false)
 	private Service service;
 
-	public int getRoom_id() {
-		return room_id;
+	public int getRoomId() {
+		return roomId;
 	}
 
-	public void setRoom_id(int room_id) {
-		this.room_id = room_id;
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
 	}
 
 	public Service getService() {

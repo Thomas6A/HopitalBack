@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.simplon.hopital.business.DTO.BedDTO;
 import co.simplon.hopital.business.convert.BedConvert;
+import co.simplon.hopital.business.dto.BedDTO;
 import co.simplon.hopital.persistance.repository.IBedRepository;
 
 @Service

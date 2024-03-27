@@ -15,29 +15,30 @@ public class Bed {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int bed_id;
+	@Column(name = "bed_id")
+	private int bedId;
 	
-	@Column(nullable = false)
-	private boolean bed_statut;
+	@Column(nullable = false, name = "bed_statut")
+	private boolean bedStatut;
 	
 	@ManyToOne
 	@JoinColumn(name = "room_id", nullable = false)
 	private Room room;
 
-	public int getBed_id() {
-		return bed_id;
+	public int getBedId() {
+		return bedId;
 	}
 
-	public void setBed_id(int bed_id) {
-		this.bed_id = bed_id;
+	public void setBedId(int bedId) {
+		this.bedId = bedId;
 	}
 
-	public boolean isBed_statut() {
-		return bed_statut;
+	public boolean isBedStatut() {
+		return bedStatut;
 	}
 
-	public void setBed_statut(boolean bed_statut) {
-		this.bed_statut = bed_statut;
+	public void setBedStatut(boolean bedStatut) {
+		this.bedStatut = bedStatut;
 	}
 
 	public Room getRoom() {

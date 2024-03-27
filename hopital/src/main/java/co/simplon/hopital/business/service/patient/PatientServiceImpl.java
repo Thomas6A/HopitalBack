@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.simplon.hopital.business.DTO.BedDTO;
-import co.simplon.hopital.business.DTO.PatientDTO;
 import co.simplon.hopital.business.convert.PatientConvert;
+import co.simplon.hopital.business.dto.BedDTO;
+import co.simplon.hopital.business.dto.PatientDTO;
 import co.simplon.hopital.business.service.bed.IBedService;
 import co.simplon.hopital.persistance.repository.IPatientRepository;
 
@@ -48,11 +48,11 @@ public class PatientServiceImpl  implements IPatientService{
 
 	@Override
 	public void affectPatient(PatientDTO patient, BedDTO bed) {
-		bed.setBed_statut(true);
+		bed.setBedStatut(true);
 		bedservice.updateBed(bed);
 		if (patient.getBed() != null) {
 			BedDTO patientBed = patient.getBed();
-			patientBed.setBed_statut(false);
+			patientBed.setBedStatut(false);
 			bedservice.updateBed(patientBed);
 		}
 		patient.setBed(bed);
@@ -62,7 +62,7 @@ public class PatientServiceImpl  implements IPatientService{
 	@Override
 	public void removePatient(PatientDTO patient) {
 		BedDTO bed = patient.getBed();
-		bed.setBed_statut(false);
+		bed.setBedStatut(false);
 		bedservice.updateBed(bed);
 		patient.setBed(null);
 		updatePatient(patient);

@@ -2,7 +2,7 @@ package co.simplon.hopital.business.service.bed;
 
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.BedDTO;
+import co.simplon.hopital.business.dto.BedDTO;
 
 public interface IBedService {
 	

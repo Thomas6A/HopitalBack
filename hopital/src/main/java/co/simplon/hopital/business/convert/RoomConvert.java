@@ -3,7 +3,7 @@ package co.simplon.hopital.business.convert;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.simplon.hopital.business.DTO.RoomDTO;
+import co.simplon.hopital.business.dto.RoomDTO;
 import co.simplon.hopital.persistance.entity.Room;
 
 public class RoomConvert {
@@ -19,13 +19,13 @@ public class RoomConvert {
 	
 	public RoomDTO convertEntityToDTO(final Room entity) {
 		RoomDTO dto = new RoomDTO();
-		dto.setRoom_id(entity.getRoom_id());
+		dto.setRoomId(entity.getRoomId());
 		dto.setService(ServiceConvert.getInstance().convertEntityToDTO(entity.getService()));
 		return dto;
 	}
 	
 	public List<RoomDTO> convertListEntityToListDTO(final List<Room> entities){
-		List<RoomDTO> dtos = new ArrayList<RoomDTO>();
+		List<RoomDTO> dtos = new ArrayList<>();
 		for (Room entity : entities) {
 			dtos.add(convertEntityToDTO(entity));
 		}
@@ -34,13 +34,13 @@ public class RoomConvert {
 	
 	public Room convertDTOToEntity(final RoomDTO dto) {
 		Room entity = new Room();
-		entity.setRoom_id(dto.getRoom_id());
+		entity.setRoomId(dto.getRoomId());
 		entity.setService(ServiceConvert.getInstance().convertDTOToEntity(dto.getService()));
 		return entity;
 	}
 	
 	public List<Room> convertListDTOToListEntity(final List<RoomDTO> dtos){
-		List<Room> entities = new ArrayList<Room>();
+		List<Room> entities = new ArrayList<>();
 		for (RoomDTO dto : dtos) {
 			entities.add(convertDTOToEntity(dto));
 		}

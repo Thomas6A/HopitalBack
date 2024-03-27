@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.hopital.business.DTO.PatientDTO;
+import co.simplon.hopital.business.dto.PatientDTO;
 import co.simplon.hopital.business.service.patient.IPatientService;
 
 @RestController
