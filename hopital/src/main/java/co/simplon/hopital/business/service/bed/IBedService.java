@@ -9,5 +9,7 @@ public interface IBedService {
 	public List<BedDTO> getAllBed();
 	
 	public List<BedDTO> getAllFreeBed();
+	
+	public void updateBed(final BedDTO bed);
 
 }

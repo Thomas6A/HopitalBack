@@ -23,6 +23,11 @@ public class BedServiceImpl implements IBedService{
 	public List<BedDTO> getAllFreeBed() {
 		return BedConvert.getInstance().convertListEntityToListDTO(repo.getFreeBed());
 	}
+	
+	@Override
+	public void updateBed(final BedDTO bed) {
+		repo.save(BedConvert.getInstance().convertDTOToEntity(bed));
+	}
 
 	@Autowired
 	public void setRepo(IBedRepository repo) {

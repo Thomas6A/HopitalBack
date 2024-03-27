@@ -8,12 +8,15 @@ import org.springframework.stereotype.Service;
 import co.simplon.hopital.business.DTO.BedDTO;
 import co.simplon.hopital.business.DTO.PatientDTO;
 import co.simplon.hopital.business.convert.PatientConvert;
+import co.simplon.hopital.business.service.bed.IBedService;
 import co.simplon.hopital.persistance.repository.IPatientRepository;
 
 @Service
 public class PatientServiceImpl  implements IPatientService{
 	
 	private IPatientRepository repo;
+	
+	private IBedService bedservice;
 
 	@Override
 	public void createPatient(PatientDTO patient) {
@@ -45,13 +48,17 @@ public class PatientServiceImpl  implements IPatientService{
 
 	@Override
 	public void affectPatient(PatientDTO patient, BedDTO bed) {
+		bed.setBed_statut(true);
+		bedservice.updateBed(bed);
 		patient.setBed(bed);
 		updatePatient(patient);
-		
 	}
 
 	@Override
 	public void removePatient(PatientDTO patient) {
+		BedDTO bed = patient.getBed();
+		bed.setBed_statut(false);
+		bedservice.updateBed(bed);
 		patient.setBed(null);
 		updatePatient(patient);
 	}
@@ -60,6 +67,15 @@ public class PatientServiceImpl  implements IPatientService{
 	public void setRepo(IPatientRepository repo) {
 		this.repo = repo;
 	}
+
+	@Autowired
+	public void setBedservice(IBedService bedservice) {
+		this.bedservice = bedservice;
+	}
+	
+	
+	
+	
 	
 	
 
