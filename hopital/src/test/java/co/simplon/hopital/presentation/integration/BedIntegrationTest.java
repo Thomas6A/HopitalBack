@@ -30,5 +30,12 @@ class BedIntegrationTest {
         assertEquals(HttpStatus.OK, statusCode);
 	}
 	
+	@Test
+	void getAllFreeBedTest() throws Exception {
+		ResponseEntity<String> responseEntity = this.restTemplate.getForEntity("http://localhost:" + port + "/freebeds", String.class);
+        HttpStatus statusCode = (HttpStatus) responseEntity.getStatusCode();
+
+        assertEquals(HttpStatus.OK, statusCode);
+	}
 
 }
