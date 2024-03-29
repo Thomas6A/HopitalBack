@@ -10,12 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.hopital.business.dto.BedDTO;
 import co.simplon.hopital.business.service.patient.IPatientService;
 
+/**
+ * Controller class for handling requests related to affecting patients.
+ */
 @RestController
 @CrossOrigin
 public class AffectPatientController {
 	
 	private IPatientService service;
 	
+	/**
+	 * Affects a patient to a bed.
+	 * 
+	 * @param id The ID of the patient to affect.
+	 * @param bed The BedDTO representing the bed to assign to the patient.
+	 */
 	@PutMapping("/affectPatients/{id}")
 	public void affectPatient(@PathVariable int id, @RequestBody BedDTO bed) {
 		service.affectPatient(service.getPatient(id), bed);

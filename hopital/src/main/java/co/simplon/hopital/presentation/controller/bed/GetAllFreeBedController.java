@@ -10,12 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.hopital.business.dto.BedDTO;
 import co.simplon.hopital.business.service.bed.IBedService;
 
+/**
+ * Controller class for handling requests related to retrieving all free beds.
+ */
 @RestController
 @CrossOrigin
 public class GetAllFreeBedController {
 	
 private IBedService service;
 	
+	/**
+	 * Retrieves a list of all free beds.
+	 * 
+	 * @return The list of all free BedDTOs.
+	 */
 	@GetMapping("/freebeds")
 	public List<BedDTO> getAllFreeBed(){
 		return service.getAllFreeBed();
