@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import co.simplon.hopital.persistance.entity.Service;
 
+/**
+ * Repository interface for managing Service entities.
+ */
 @Repository
 public interface IServiceRepository extends JpaRepository<Service, Integer> {
 

@@ -6,10 +6,18 @@ import java.util.List;
 import co.simplon.hopital.business.dto.PatientDTO;
 import co.simplon.hopital.persistance.entity.Patient;
 
+/**
+ * Converter class for converting between Patient entities and PatientDTOs.
+ */
 public class PatientConvert {
 	
 	private static PatientConvert instance;
 	
+	/**
+	 * Gets the singleton instance of PatientConvert.
+	 * 
+	 * @return The singleton instance of PatientConvert.
+	 */
 	public static PatientConvert getInstance() {
 		if (instance == null) {
 			instance = new PatientConvert();
@@ -17,6 +25,12 @@ public class PatientConvert {
 		return instance;
 	}
 	
+	/**
+	 * Converts a Patient entity to a PatientDTO.
+	 * 
+	 * @param entity The Patient entity to convert.
+	 * @return The corresponding PatientDTO.
+	 */
 	public PatientDTO convertEntityToDTO(final Patient entity) {
 		PatientDTO dto = new PatientDTO();
 		dto.setPatientId(entity.getPatientId());
@@ -31,6 +45,12 @@ public class PatientConvert {
 		return dto;
 	}
 	
+	/**
+	 * Converts a list of Patient entities to a list of PatientDTOs.
+	 * 
+	 * @param entities The list of Patient entities to convert.
+	 * @return The corresponding list of PatientDTOs.
+	 */
 	public List<PatientDTO> convertListEntityToListDTO(final List<Patient> entities){
 		List<PatientDTO> dtos = new ArrayList<>();
 		for (Patient entity : entities) {
@@ -39,6 +59,12 @@ public class PatientConvert {
 		return dtos;
 	}
 	
+	/**
+	 * Converts a PatientDTO to a Patient entity.
+	 * 
+	 * @param dto The PatientDTO to convert.
+	 * @return The corresponding Patient entity.
+	 */
 	public Patient convertDTOToEntity(final PatientDTO dto) {
 		Patient entity = new Patient();
 		entity.setPatientId(dto.getPatientId());
@@ -53,6 +79,12 @@ public class PatientConvert {
 		return entity;
 	}
 	
+	/**
+	 * Converts a list of PatientDTOs to a list of Patient entities.
+	 * 
+	 * @param dtos The list of PatientDTOs to convert.
+	 * @return The corresponding list of Patient entities.
+	 */
 	public List<Patient> convertListDTOToListEntity(final List<PatientDTO> dtos){
 		List<Patient> entities = new ArrayList<>();
 		for (PatientDTO dto : dtos) {
