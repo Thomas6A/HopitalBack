@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "3f715275-b54f-4090-82a7-1740336403b3",
+		"name": "api hopital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28592575"
+	},
+	"item": [
+		{
+			"name": "getAllPatients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getPatients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "createPatient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientFirstname\": \"prenom2\",\r\n    \"patientName\": \"nom2\",\r\n    \"patientGender\": \"genre2\",\r\n    \"patientAge\": 21,\r\n    \"patientNumber\": \"22222232\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePatient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientId\": 4,\r\n    \"patientFirstname\": \"prenom2\",\r\n    \"patientName\": \"nom2\",\r\n    \"patientGender\": \"genre2\",\r\n    \"patientAge\": 21,\r\n    \"patientNumber\": \"2222222\",\r\n    \"bed\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePatients",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientId\": 5,\r\n    \"patientFirstname\": \"prenom2\",\r\n    \"patientName\": \"nom3\",\r\n    \"patientGender\": \"genre2\",\r\n    \"patientAge\": 21,\r\n    \"patientNumber\": \"2222222\",\r\n    \"bed\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/patients",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/beds",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"beds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "affectPatient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bedId\": 11,\r\n    \"bedStatut\": false,\r\n    \"room\": {\r\n        \"roomId\": 3,\r\n        \"service\": {\r\n            \"serviceId\": 2,\r\n            \"serviceName\": \"neurologie\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/affectPatients/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"affectPatients",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removePatient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientId\": 5,\r\n    \"patientFirstname\": \"prenom2\",\r\n    \"patientName\": \"nom3\",\r\n    \"patientGender\": \"genre2\",\r\n    \"patientAge\": 21,\r\n    \"patientNumber\": \"2222222\",\r\n    \"bed\": {\r\n        \"bedId\": 11,\r\n        \"bedStatut\": true,\r\n         \"room\": {\r\n             \"roomId\": 3,\r\n            \"service\": {\r\n                \"serviceId\": 2,\r\n                \"serviceName\": \"neurologie\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/removePatients",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"removePatients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFreeBed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/freebeds",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"freebeds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRoom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/rooms",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllService",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPatientFromService",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/patientsFromService/urgence",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"patientsFromService",
+						"urgence"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoibmFtZSIsImV4cCI6MTcxMjE1NDA0MiwiaWF0IjoxNzEyMDY3NjQyfQ.eF8sHob9GA-y5R1La9ayJrFS7BM-rnFpmKEu_chXXYY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
