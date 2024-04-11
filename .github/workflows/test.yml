@@ -37,7 +37,7 @@ jobs:
       - uses: actions/setup-go@v1
       - name: Snyk monitor
         run: |
-              cd hospital 
+              cd hopital 
               snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
