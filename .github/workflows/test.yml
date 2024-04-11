@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        working-directory : ./hopital   
-        run: snyk/actions/maven-3-jdk-17@master
+        working-directory : ./hopital  
+        run: snyk test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
