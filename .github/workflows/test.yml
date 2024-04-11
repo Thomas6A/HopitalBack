@@ -30,12 +30,13 @@ jobs:
           name: Package
           path: staging
   security:
-    runs-on: ubuntu-latest
-    working-directory : ./hopital    
+    runs-on: ubuntu-latest   
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven-3-jdk-17@master
+        with:
+          working-directory : ./hopital 
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
